@@ -72,11 +72,14 @@ class App extends Component {
     }
 
     calculateFaceLocation = (data) => {
+        console.log('need to map over all this data', data)
+                                            //data.4 arrays <-- need to map over regions here
         const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
         const image = document.getElementById('inputImage');
         const width = Number(image.width);
         const height = Number(image.height);
-        // console.log(width, height); checking height & width of the image
+        // console.log(width, height);
+        // checking height & width of the image
         return {
             leftCol: clarifaiFace.left_col * width,
             topRow: clarifaiFace.top_row * height,
@@ -89,8 +92,9 @@ class App extends Component {
     // which is an object that gets passed
     displayFaceBox = (box) => {
         //logging the object values after calculation
-        // console.log(box) dimensions
+        console.log('blue box values after calculation',box)
         this.setState({box});
+        // console.log(box, 'displayfacebox values')
     }
 
     onButtonSubmit = () => {

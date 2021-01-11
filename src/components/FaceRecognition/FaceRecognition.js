@@ -2,6 +2,7 @@ import React from 'react'
 import './FaceRecognitionBox.css';
 
 const FaceRecognition = ({imageUrl, box}) => {
+  // console.log(box, 'this is being passed as props to style the box')
     return (
         <div className="center ma">
             <div className="absolute mt2">
@@ -10,13 +11,13 @@ const FaceRecognition = ({imageUrl, box}) => {
                      alt=""
                      width='500px'
                      height='auto'/>
-                <div className="bounding-box"
-                     style={{
-                         top: box.topRow,
-                         right: box.rightCol,
-                         bottom: box.bottomRow,
-                         left: box.leftCol
-                     }}/>
+                           <div className="bounding-box"
+                                style={{
+                                    top: box.topRow,
+                                    right: box.rightCol,
+                                    bottom: box.bottomRow,
+                                    left: box.leftCol
+                                }}/>
             </div>
         </div>
     )
